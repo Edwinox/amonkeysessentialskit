@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "monkeykit:gold_krona"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "monkeykit:silver_krona"
+  }
+}
