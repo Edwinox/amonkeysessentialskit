@@ -1,0 +1,22 @@
+{
+  "entries": [
+    "monkeykit:copper_krona_from_zombie_villager",
+    "monkeykit:copper_krona_from_stray",
+    "monkeykit:copper_krona_from_slime",
+    "monkeykit:copper_krona_from_bogged",
+    "monkeykit:copper_krona_from_guardian",
+    "monkeykit:copper_krona_from_zombified_piglin",
+    "monkeykit:copper_krona_from_witch",
+    "monkeykit:copper_krona_from_spider",
+    "monkeykit:copper_krona_from_drowned",
+    "monkeykit:copper_krona_from_husk",
+    "monkeykit:copper_krona_from_pillager",
+    "monkeykit:copper_krona_from_zombie",
+    "monkeykit:copper_krona_from_skeleton",
+    "monkeykit:copper_krona_from_vindicator",
+    "monkeykit:copper_krona_from_creeper",
+    "monkeykit:copper_krona_from_wither_skeleton",
+    "monkeykit:copper_krona_from_cave_spider"
+  ],
+  "replace": false
+}
