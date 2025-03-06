@@ -1,0 +1,14 @@
+{
+  "type": "monkeykit:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:creeperoverhaul/entities/desert_creeper"
+    },
+    {
+      "chance": 0.5,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "monkeykit:copper_krona"
+}
