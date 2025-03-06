@@ -2,6 +2,7 @@ package net.edwinox.monkeykit;
 
 import net.edwinox.monkeykit.item.ModCreativeModeTabs;
 import net.edwinox.monkeykit.item.ModItems;
+import net.edwinox.monkeykit.loot.ModLootModifiers;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -43,6 +44,8 @@ public class MonkeyKit
         ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+
+        ModLootModifiers.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
