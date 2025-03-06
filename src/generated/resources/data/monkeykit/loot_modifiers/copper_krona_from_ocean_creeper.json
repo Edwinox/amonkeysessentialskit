@@ -3,7 +3,7 @@
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
-      "loot_table_id": "minecraft:creeperoverhaul/entities/ocean_creeper"
+      "loot_table_id": "creeperoverhaul:entities/ocean_creeper"
     },
     {
       "chance": 0.5,

@@ -3,7 +3,7 @@
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
-      "loot_table_id": "minecraft:variantsandventures/entities/murk"
+      "loot_table_id": "variantsandventures:entities/murk"
     },
     {
       "chance": 0.5,

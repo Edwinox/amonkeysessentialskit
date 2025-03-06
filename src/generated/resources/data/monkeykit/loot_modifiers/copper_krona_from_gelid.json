@@ -3,7 +3,7 @@
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
-      "loot_table_id": "minecraft:variantsandventures/entities/gelid"
+      "loot_table_id": "variantsandventures:entities/gelid"
     },
     {
       "chance": 0.5,

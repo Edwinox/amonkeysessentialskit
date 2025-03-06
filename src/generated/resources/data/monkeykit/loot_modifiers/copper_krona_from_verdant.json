@@ -3,7 +3,7 @@
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
-      "loot_table_id": "minecraft:variantsandventures/entities/verdant"
+      "loot_table_id": "variantsandventures:entities/verdant"
     },
     {
       "chance": 0.5,
