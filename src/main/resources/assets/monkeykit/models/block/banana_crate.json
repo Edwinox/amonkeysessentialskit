@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "monkeykit:block/banana_crate_bottom",
+    "east": "monkeykit:block/banana_crate_side",
+    "north": "monkeykit:block/banana_crate_side",
+    "particle": "monkeykit:block/banana_crate_side",
+    "south": "monkeykit:block/banana_crate_side",
+    "up": "monkeykit:block/banana_crate_top",
+    "west": "monkeykit:block/banana_crate_side"
+  }
+}

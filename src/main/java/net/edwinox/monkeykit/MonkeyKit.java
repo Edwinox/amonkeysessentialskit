@@ -1,8 +1,12 @@
 package net.edwinox.monkeykit;
 
+import net.edwinox.monkeykit.block.ModBlocks;
+import net.edwinox.monkeykit.event.ModEvents;
 import net.edwinox.monkeykit.item.ModCreativeModeTabs;
 import net.edwinox.monkeykit.item.ModItems;
 import net.edwinox.monkeykit.loot.ModLootModifiers;
+import net.edwinox.monkeykit.sound.ModSounds;
+import net.edwinox.monkeykit.villager.ModVillagers;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -45,7 +49,13 @@ public class MonkeyKit
 
         ModItems.register(modEventBus);
 
+        ModBlocks.register(modEventBus);
+
         ModLootModifiers.register(modEventBus);
+
+        ModVillagers.register(modEventBus);
+
+        ModSounds.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

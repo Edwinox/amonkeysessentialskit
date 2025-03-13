@@ -1,0 +1,10 @@
+{
+  "gorillager_talk": {
+    "subtitle": "sounds.monkeykit.gorillager_noise",
+    "sounds": [
+      "monkeykit:gorillager_noise_1",
+      "monkeykit:gorillager_noise_2",
+      "monkeykit:gorillager_noise_3"
+    ]
+  }
+}

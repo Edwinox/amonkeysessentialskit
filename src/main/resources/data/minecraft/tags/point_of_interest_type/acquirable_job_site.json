@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "monkeykit:monkey_poi",
+      "required": false
+    }
+  ]
+}

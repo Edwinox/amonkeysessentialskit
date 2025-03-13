@@ -1,6 +1,7 @@
 package net.edwinox.monkeykit.item;
 
 import net.edwinox.monkeykit.MonkeyKit;
+import net.edwinox.monkeykit.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -21,6 +22,8 @@ public static final Supplier<CreativeModeTab> MONKEYKIT_ITEMS_TAB = CREATIVE_MOD
                      output.accept(ModItems.COPPERKRONA);
                      output.accept(ModItems.SILVERKRONA);
                      output.accept(ModItems.GOLDKRONA);
+                     output.accept(ModItems.BANANA);
+                     output.accept(ModBlocks.BANANA_CRATE);
                 }).build());
 
     public static void register(IEventBus eventBus) {
