@@ -3,8 +3,11 @@
  "item.monkeykit.silver_krona": "Silver Krona",
  "item.monkeykit.gold_krona": "Gold Krona",
  "item.monkeykit.banana": "Banana",
+ "item.monkeykit.banana_pulp": "Banana Pulp",
+ "item.monkeykit.banana_pulp_dust": "Banana Pulp Dust",
+ "item.monkeykit.banana_peel": "Banana Peel",
+
  "block.monkeykit.banana_crate": "Banana Crate",
- "entity.minecraft.villager.monkeykit.gorillager": "Gorillager",
- "creativetab.monkeykit.monkeykit_items": "A Monkey's Essentials Kit",
- "sounds.monkeykit.gorillager_noise": "Gorillager works"
+
+ "creativetab.monkeykit.monkeykit_items": "A Monkey's Essentials Kit"
 }

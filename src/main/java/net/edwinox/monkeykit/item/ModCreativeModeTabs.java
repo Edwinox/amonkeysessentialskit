@@ -23,7 +23,10 @@ public static final Supplier<CreativeModeTab> MONKEYKIT_ITEMS_TAB = CREATIVE_MOD
                      output.accept(ModItems.SILVERKRONA);
                      output.accept(ModItems.GOLDKRONA);
                      output.accept(ModItems.BANANA);
-                     output.accept(ModBlocks.BANANA_CRATE);
+                     output.accept(ModItems.BANANAPEEL);
+                     output.accept(ModItems.BANANAPULP);
+                     output.accept(ModItems.BANANAPULPDUST);
+                     output.accept(ModBlocks.BANANACRATE);
                 }).build());
 
     public static void register(IEventBus eventBus) {

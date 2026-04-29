@@ -18,7 +18,7 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(MonkeyKit.MODID);
 
-    public static final DeferredBlock<Block> BANANA_CRATE = registerBlock ("banana_crate",
+    public static final DeferredBlock<Block> BANANACRATE = registerBlock ("banana_crate",
             () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.PODZOL)
                     .strength(2.0f, 3.0F)

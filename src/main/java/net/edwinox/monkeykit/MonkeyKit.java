@@ -1,13 +1,10 @@
 package net.edwinox.monkeykit;
 
 import net.edwinox.monkeykit.block.ModBlocks;
-import net.edwinox.monkeykit.event.ModEvents;
 import net.edwinox.monkeykit.item.ModCreativeModeTabs;
 import net.edwinox.monkeykit.item.ModItems;
 import net.edwinox.monkeykit.loot.ModLootModifiers;
 import net.edwinox.monkeykit.sound.ModSounds;
-import net.edwinox.monkeykit.villager.ModVillagers;
-import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -52,8 +49,6 @@ public class MonkeyKit
         ModBlocks.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
-
-        ModVillagers.register(modEventBus);
 
         ModSounds.register(modEventBus);
 

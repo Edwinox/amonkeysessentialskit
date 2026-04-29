@@ -17,6 +17,12 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> BANANA = ITEMS.register("banana",
             () -> new Item(new Item.Properties().food(ModFoodProperties.BANANA)));
+    public static final DeferredItem<Item> BANANAPULP = ITEMS.register("banana_pulp",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.BANANAPULP)));
+    public static final DeferredItem<Item> BANANAPULPDUST = ITEMS.register("banana_pulp_dust",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BANANAPEEL = ITEMS.register("banana_peel",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
     ITEMS.register(eventBus);
