@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MonkeyKit.MODID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MonkeyKit.MOD_ID);
 
 public static final Supplier<CreativeModeTab> MONKEYKIT_ITEMS_TAB = CREATIVE_MODE_TAB.register("monkeykit_items_tab",
         () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.COPPERKRONA.get()))
@@ -26,6 +26,7 @@ public static final Supplier<CreativeModeTab> MONKEYKIT_ITEMS_TAB = CREATIVE_MOD
                      output.accept(ModItems.BANANAPEEL);
                      output.accept(ModItems.BANANAPULP);
                      output.accept(ModItems.BANANAPULPDUST);
+                     output.accept(ModItems.DRILL);
                      output.accept(ModBlocks.BANANACRATE);
                 }).build());
 

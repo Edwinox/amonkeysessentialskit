@@ -15,7 +15,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
     public ModGlobalLootModifierProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-        super(output, registries, MonkeyKit.MODID);
+        super(output, registries, MonkeyKit.MOD_ID);
     }
 
     @Override

@@ -16,7 +16,7 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
-            DeferredRegister.createBlocks(MonkeyKit.MODID);
+            DeferredRegister.createBlocks(MonkeyKit.MOD_ID);
 
     public static final DeferredBlock<Block> BANANACRATE = registerBlock ("banana_crate",
             () -> new Block(BlockBehaviour.Properties.of()
