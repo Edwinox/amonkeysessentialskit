@@ -1,9 +1,7 @@
 package net.edwinox.monkeykit.item;
 
 import net.edwinox.monkeykit.MonkeyKit;
-import net.edwinox.monkeykit.item.custom.DrillItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Tiers;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -25,10 +23,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> BANANAPEEL = ITEMS.register("banana_peel",
             () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> DRILL = ITEMS.register("drill",
-            () -> new DrillItem(Tiers.DIAMOND, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
-    ITEMS.register(eventBus);
+        ITEMS.register(eventBus);
     }
 }

@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-06T12:51:37.7133987	Global Loot Modifiers : monkeykit
+// 1.21.1	2026-06-21T18:33:05.4994834	Global Loot Modifiers : monkeykit
 f1b8b89569a3ed9ccba6e0e96ee815bf2990498c data/monkeykit/loot_modifiers/copper_krona_from_badlands_creeper.json
 e3c4a31b0ad75029b4145595b633cb85d174182b data/monkeykit/loot_modifiers/copper_krona_from_bamboo_creeper.json
 35a8c17eb37dee0f5851a9499b091f67145bfa03 data/monkeykit/loot_modifiers/copper_krona_from_beach_creeper.json
@@ -36,4 +36,4 @@ de9327347afb5e98bbef533314d24d1ce7227b23 data/monkeykit/loot_modifiers/copper_kr
 64c16b944b10682cb35561b4d07ab3f395b19d67 data/monkeykit/loot_modifiers/copper_krona_from_zombie.json
 00b44a6ed380958739ad0820ce881eadeb94fd49 data/monkeykit/loot_modifiers/copper_krona_from_zombie_villager.json
 004d0da6a242291d917fde60191c96f9c6e439e7 data/monkeykit/loot_modifiers/copper_krona_from_zombified_piglin.json
-d52101005860b6175c11c970c62b21070926ba4e data/neoforge/loot_modifiers/global_loot_modifiers.json
+6ac4346b95edaed4d5bb671eb35d8f50ca944521 data/neoforge/loot_modifiers/global_loot_modifiers.json

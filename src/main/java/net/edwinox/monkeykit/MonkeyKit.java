@@ -59,6 +59,10 @@ public class MonkeyKit
 
         ModSounds.register(modEventBus);
 
+        MonkeyItems.register();
+
+        REG.registerEventListeners(modEventBus);
+
         modEventBus.addListener(this::addCreative);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

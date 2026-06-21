@@ -13,7 +13,9 @@ public class ModSounds {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS =
             DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, MonkeyKit.MOD_ID);
 
-    public static final Supplier<SoundEvent> GORILLAGER_NOISE = registerSoundEvent("gorillager_noise");
+    public static final Supplier<SoundEvent> DRILL_SPIN = registerSoundEvent("drill_spin");
+    public static final Supplier<SoundEvent> DRILL_AMBIENT = registerSoundEvent("drill_ambient");
+    public static final Supplier<SoundEvent> DRILL_STOP = registerSoundEvent("drill_stop");
 
     private static Supplier<SoundEvent> registerSoundEvent(String name) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(MonkeyKit.MOD_ID, name);

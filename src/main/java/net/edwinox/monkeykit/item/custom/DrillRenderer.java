@@ -20,17 +20,18 @@ public class DrillRenderer extends CustomRenderedItemModelRenderer {
     protected static final PartialModel COG = PartialModel.of(MonkeyKit.loc("item/drill/cog"));
     protected static final PartialModel DRILL = PartialModel.of(MonkeyKit.loc("item/drill/drill"));
 
-    LerpedFloat lerpSwing;
+    LerpedFloat lerpSpeed;
+    float rotation;
 
     public DrillRenderer() {
-        lerpSwing = LerpedFloat.linear();
+        lerpSpeed = LerpedFloat.linear();
     }
 
     @Override
     protected void render(ItemStack stack, CustomRenderedItemModel model, PartialItemModelRenderer renderer,
                           ItemDisplayContext transformType, PoseStack ms, MultiBufferSource buffer, int light, int overlay) {
         renderer.render(model.getOriginalModel(), light);
-        var angle = 0.5f;
+        var angle = 0f;
         var mc = Minecraft.getInstance();
 
         if (mc.player instanceof LocalPlayer player) {
@@ -39,13 +40,20 @@ public class DrillRenderer extends CustomRenderedItemModelRenderer {
             var held = mc.options.keyAttack.isDown() || mc.options.keyAttack.consumeClick();
             boolean playerHeldKey = player.getPersistentData().getBoolean("DrillKey");
 
-            if (inMainHand) angle += held ? 2.5f : 0.5f;
-            if (playerHeldKey) angle *= 2f;
+            float targetSpeed = 0f;
+            if (inMainHand && held) {
+                targetSpeed = 5f;
+                if (playerHeldKey) targetSpeed *= 2f;
+            }
 
-            lerpSwing.chase((lerpSwing.getValue() + angle) % (36000f), 1f / 32f, LerpedFloat.Chaser.EXP);
-            lerpSwing.tickChaser();
+            // Smoothly ramp the speed itself toward the target (0 when idle, full RPM when mining)
+            lerpSpeed.chase(targetSpeed, 1f / 40f, LerpedFloat.Chaser.EXP);
+            lerpSpeed.tickChaser();
 
-            angle = lerpSwing.getValue(AnimationTickHolder.getPartialTicks()) % 360;
+            // Accumulate rotation using the current (ramped) speed each tick
+            rotation = (rotation + lerpSpeed.getValue(AnimationTickHolder.getPartialTicks())) % 36000f;
+
+            angle = rotation % 360;
             angle *= -2;
         }
 

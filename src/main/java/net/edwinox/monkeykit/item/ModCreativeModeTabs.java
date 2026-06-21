@@ -15,20 +15,19 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MonkeyKit.MOD_ID);
 
-public static final Supplier<CreativeModeTab> MONKEYKIT_ITEMS_TAB = CREATIVE_MODE_TAB.register("monkeykit_items_tab",
-        () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.COPPERKRONA.get()))
-            .title(Component.translatable("creativetab.monkeykit.monkeykit_items"))
-                .displayItems((itemDisplayParameters, output) -> {
-                     output.accept(ModItems.COPPERKRONA);
-                     output.accept(ModItems.SILVERKRONA);
-                     output.accept(ModItems.GOLDKRONA);
-                     output.accept(ModItems.BANANA);
-                     output.accept(ModItems.BANANAPEEL);
-                     output.accept(ModItems.BANANAPULP);
-                     output.accept(ModItems.BANANAPULPDUST);
-                     output.accept(ModItems.DRILL);
-                     output.accept(ModBlocks.BANANACRATE);
-                }).build());
+    public static final Supplier<CreativeModeTab> MONKEYKIT_ITEMS_TAB = CREATIVE_MODE_TAB.register("monkeykit_items_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.COPPERKRONA.get()))
+                    .title(Component.translatable("creativetab.monkeykit.monkeykit_items"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.COPPERKRONA);
+                        output.accept(ModItems.SILVERKRONA);
+                        output.accept(ModItems.GOLDKRONA);
+                        output.accept(ModItems.BANANA);
+                        output.accept(ModItems.BANANAPEEL);
+                        output.accept(ModItems.BANANAPULP);
+                        output.accept(ModItems.BANANAPULPDUST);
+                        output.accept(ModBlocks.BANANACRATE);
+                    }).build());
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TAB.register(eventBus);
