@@ -6,11 +6,7 @@
   },
   "drill_ambient": {
     "sounds": [
-      { "name": "monkeykit:ambient_1", "stream": true },
-      { "name": "monkeykit:ambient_2", "stream": true },
-      { "name": "monkeykit:ambient_3", "stream": true },
-      { "name": "monkeykit:ambient_4", "stream": true },
-      { "name": "monkeykit:ambient_5", "stream": true }
+      { "name": "monkeykit:engine_ambient", "stream": true }
     ]
   },
   "drill_stop": {

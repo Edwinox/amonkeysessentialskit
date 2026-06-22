@@ -7,20 +7,22 @@ import net.minecraft.sounds.SoundSource;
 
 public class DrillSpinSoundInstance extends AbstractTickableSoundInstance {
 
-    // Adjust these to tune the spin-up/down feel
-    private static final float MIN_PITCH    = 0.5f;  // pitch when starting
-    private static final float MAX_PITCH    = 1.0f;  // pitch at full speed
-    private static final float RAMP_SPEED   = 0.05f; // how fast pitch changes per tick
+    private static final float MIN_PITCH    = 0.5f;
+    private static final float MAX_PITCH    = 1.0f;
+    private static final float RAMP_SPEED   = 0.05f;
+    private static final float FADE_SPEED   = 0.25f; // how fast ambient fades out per tick
 
     private final LocalPlayer player;
     private float currentPitch;
     private final boolean rampUp;
+    private final float targetVolume;
+    private boolean fading = false;
 
-    // rampUp = true for spin sound, false for ambient (no ramping)
     public DrillSpinSoundInstance(LocalPlayer player, SoundEvent soundEvent, float volume, boolean rampUp) {
         super(soundEvent, SoundSource.PLAYERS, player.level().getRandom());
         this.player = player;
         this.rampUp = rampUp;
+        this.targetVolume = volume;
         this.looping = true;
         this.delay = 0;
         this.volume = volume;
@@ -30,6 +32,15 @@ public class DrillSpinSoundInstance extends AbstractTickableSoundInstance {
         this.x = player.getX();
         this.y = player.getY();
         this.z = player.getZ();
+    }
+
+    // Call this to trigger a fade-out instead of stopping instantly
+    public void fadeOut() {
+        fading = true;
+    }
+
+    public boolean isFading() {
+        return fading;
     }
 
     @Override
@@ -45,6 +56,13 @@ public class DrillSpinSoundInstance extends AbstractTickableSoundInstance {
         if (rampUp) {
             currentPitch = Math.min(MAX_PITCH, currentPitch + RAMP_SPEED);
             this.pitch = currentPitch;
+        }
+
+        if (fading) {
+            this.volume = Math.max(0f, this.volume - FADE_SPEED);
+            if (this.volume <= 0f) {
+                stop();
+            }
         }
     }
 }

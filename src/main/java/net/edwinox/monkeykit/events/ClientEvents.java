@@ -1,6 +1,7 @@
 package net.edwinox.monkeykit.events;
 
 import net.edwinox.monkeykit.MonkeyKit;
+import net.edwinox.monkeykit.item.custom.DrillRenderer;
 import net.edwinox.monkeykit.item.custom.DrillSpinSoundInstance;
 import net.edwinox.monkeykit.item.packages.DrillKeyHandlerClient;
 import net.edwinox.monkeykit.register.MonkeyItems;
@@ -19,7 +20,7 @@ public class ClientEvents {
 
     // Adjust these to change volume (0.0 = silent, 1.0 = full volume)
     private static final float DRILL_SPIN_VOLUME    = 0.5f;
-    private static final float DRILL_AMBIENT_VOLUME = 1.0f;
+    private static final float DRILL_AMBIENT_VOLUME = 0.25f;
     private static final float DRILL_STOP_VOLUME    = 1.0f;
 
     private static DrillSpinSoundInstance drillSound;
@@ -40,12 +41,22 @@ public class ClientEvents {
         LocalPlayer player = mc.player;
         if (player == null) {
             stopAll(mc);
+            DrillRenderer.tickRotation(false, false);
             return;
         }
 
         var held = player.getMainHandItem();
         boolean holdingDrill = MonkeyItems.DRILL.isIn(held) && mc.screen == null;
         boolean mining = mc.options.keyAttack.isDown();
+        boolean playerHeldKey = player.getPersistentData().getBoolean("DrillKey");
+
+        // Tick rotation in fixed 20 TPS tick
+        DrillRenderer.tickRotation(holdingDrill && mining, playerHeldKey);
+
+        // Clear ambient reference once it has finished fading and is no longer active
+        if (drillAmbient != null && drillAmbient.isFading() && !mc.getSoundManager().isActive(drillAmbient)) {
+            drillAmbient = null;
+        }
 
         // Play stop sound on release
         if (wasMining && !mining && holdingDrill) {
@@ -54,9 +65,13 @@ public class ClientEvents {
         wasMining = mining && holdingDrill;
 
         boolean shouldPlaySpin = holdingDrill && mining;
-        boolean shouldPlayAmbient = holdingDrill;
+        boolean shouldPlayAmbient = holdingDrill && !mining;
 
+        // Spin sound
         if (shouldPlaySpin) {
+            if (drillAmbient != null && !drillAmbient.isFading()) {
+                drillAmbient.fadeOut();
+            }
             if (drillSound == null || !mc.getSoundManager().isActive(drillSound)) {
                 drillSound = new DrillSpinSoundInstance(player, ModSounds.DRILL_SPIN.get(), DRILL_SPIN_VOLUME, true);
                 mc.getSoundManager().play(drillSound);
@@ -68,12 +83,13 @@ public class ClientEvents {
             }
         }
 
+        // Ambient sound
         if (shouldPlayAmbient) {
             if (drillAmbient == null || !mc.getSoundManager().isActive(drillAmbient)) {
                 drillAmbient = new DrillSpinSoundInstance(player, ModSounds.DRILL_AMBIENT.get(), DRILL_AMBIENT_VOLUME, false);
                 mc.getSoundManager().play(drillAmbient);
             }
-        } else {
+        } else if (!holdingDrill) {
             if (drillAmbient != null) {
                 mc.getSoundManager().stop(drillAmbient);
                 drillAmbient = null;

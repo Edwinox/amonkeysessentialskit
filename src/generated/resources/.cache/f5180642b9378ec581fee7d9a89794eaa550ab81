@@ -1,0 +1,16 @@
+// 1.21.1	2026-06-21T18:37:50.126819	Registrate Provider for monkeykit [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+7246541007f9c0cae859c37ff17b0777a865d42a assets/monkeykit/lang/en_ud.json
+ae38eb547f381338f0e20276c6c4a0823aecb84d assets/monkeykit/lang/en_us.json
+6ec7745c81337bd034c72efcc500533c817bfca7 assets/monkeykit/models/item/drill.json
+d0b302aa86fe1029a1499a778be62742d031e948 data/c/tags/item/tools.json
+d0b302aa86fe1029a1499a778be62742d031e948 data/minecraft/tags/item/breaks_decorated_pots.json
+d0b302aa86fe1029a1499a778be62742d031e948 data/minecraft/tags/item/enchantable/durability.json
+d0b302aa86fe1029a1499a778be62742d031e948 data/minecraft/tags/item/enchantable/mining.json
+d0b302aa86fe1029a1499a778be62742d031e948 data/minecraft/tags/item/enchantable/mining_loot.json
+bef4e14105a8e36827c8b1d086f099deb6fb75e9 data/monkeykit/advancement/recipes/misc/crafting/drill.json
+f492e1d9aa7d799f5cc9a081b3ef657ca5654483 data/monkeykit/recipe/crafting/drill.json
+517625696f89da7636e3126a405201cc977453f0 data/monkeykit/tags/block/excavation_drill_vein_large.json
+517625696f89da7636e3126a405201cc977453f0 data/monkeykit/tags/block/excavation_drill_vein_valid.json
+5a7915b6cd59a7b6a923e3da63dde6a5d1a8b903 data/monkeykit/tags/block/mineable_with_drill.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/monkeykit/tags/item/dyed_blocks.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/monkeykit/tags/item/palette_blocks.json
